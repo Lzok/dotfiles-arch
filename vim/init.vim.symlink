@@ -1,0 +1,280 @@
+# Automatic installation
+# Note that --sync flag is used to block the execution until the installer finishes.
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Obscure hacks done, you can now modify the rest of the .vimrc as you wish :)
+
+" ============================================================================
+" Active plugins
+" You can disable or add new ones here:
+
+" this needs to be here, so vim-plug knows we are declaring the plugins we
+" want to use
+call plug#begin('~/.config/nvim/plugged')
+
+    " Install Theme
+    " https://github.com/arcticicestudio/nord-vim
+    Plug 'arcticicestudio/nord-vim'
+
+    " Autocomplete
+    " https://github.com/neoclide/coc.nvim
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+    " Fuzzy finder
+    " https://github.com/junegunn/fzf.vim
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
+
+    " Global finder
+    " https://github.com/wincent/ferret
+    Plug 'wincent/ferret'
+
+    " Vim Slim
+    " https://github.com/slim-template/vim-slim
+    Plug 'slim-template/vim-slim', { 'for': 'slim' }
+
+    " Install Status Line
+    " https://github.com/itchyny/lightline.vim
+    Plug 'itchyny/lightline.vim'
+
+    " Status line alternative
+    " https://github.com/vim-airline/vim-airline
+    " Plug 'vim-airline/vim-airline'
+    " Plug 'vim-airline/vim-airline-themes'
+    
+    " Install Nerd tree
+    " https://github.com/preservim/nerdtree
+    Plug 'scrooloose/nerdtree'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    Plug 'ryanoasis/vim-devicons'
+
+    " Completion from other opened files
+    " https://github.com/Shougo/context_filetype.vim
+    Plug 'Shougo/context_filetype.vim'
+    
+    " Install Commenter
+    " https://github.com/preservim/nerdcommenter
+    Plug 'scrooloose/nerdcommenter'
+
+    " GitGutter
+    " https://github.com/airblade/vim-gitgutter
+    Plug 'airblade/vim-gitgutter'
+
+    " Indent text object
+    " https://github.com/michaeljsmith/vim-indent-object
+    Plug 'michaeljsmith/vim-indent-object'
+
+    " Snippets
+    " https://github.com/honza/vim-snippets
+    Plug 'honza/vim-snippets'
+
+    " Git integration
+    " https://github.com/tpope/vim-fugitive
+    Plug 'tpope/vim-fugitive'
+
+    " Git/mercurial/others diff icons on the side of the file lines
+    " https://github.com/mhinz/vim-signify
+    Plug 'mhinz/vim-signify'
+
+    " Languages and frameworks
+    " Paint css colors with the real color
+    " https://github.com/lilydjwg/colorizer
+    Plug 'lilydjwg/colorizer'
+
+    " Highlight matching html tags
+    " https://github.com/Valloric/MatchTagAlways
+    Plug 'valloric/MatchTagAlways'
+
+    " Generate html in a simple way
+    " https://github.com/mattn/emmet-vim
+    Plug 'mattn/emmet-vim'
+
+    " JS, TS & React
+    " https://github.com/yuezk/vim-js
+    Plug 'yuezk/vim-js'
+    " TS Syntax https://github.com/HerringtonDarkholme/yats.vim
+    Plug 'HerringtonDarkholme/yats.vim'
+    " https://github.com/MaxMEllon/vim-jsx-pretty
+    Plug 'maxmellon/vim-jsx-pretty'
+
+    let g:coc_global_extensions = [
+      \'coc-tsserver',
+      \'coc-prettier',
+      \'coc-snippets',
+      \'coc-pairs',
+      \'coc-lists',
+      \'coc-prettier',
+      \'coc-json',
+      \'coc-html',
+      \'coc-css'
+      \]
+    " "\'coc-explorer',
+
+call plug#end()
+
+" ============================================================================
+" Vim settings and mappings
+" You can edit them as you wish
+
+syntax on
+
+" set linenumber
+set nu relativenumber
+
+set modelines=0
+" configure tabs to 4 whitespaces
+set tabstop=4
+set shiftwidth=4
+set expandtab
+filetype indent on
+set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
+set encoding=utf-8
+" when scrolling, keep cursor 3 lines away from screen border
+set scrolloff=3
+set autoindent    " always set autoindenting on
+set copyindent    " copy the previous indentation on autoindenting
+set showcmd
+set wildmenu
+set wildmode=list:longest,full
+set completeopt=menu,menuone,longest
+set cursorline
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set laststatus=2
+set autoread
+set splitright        "Split to the right
+set noeb vb t_vb=     "No Bell
+" -- INSERT -- is unnecessary anymore because the mode information is displayed in the statusline (lightline)
+set noshowmode
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" change esc to jj
+" double esc to avoid autocomplete
+imap jj <Esc><Esc>
+
+" easier navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" remove ugly vertical lines on window division
+set fillchars+=vert:\ 
+
+" save as sudo
+ca w!! w !sudo tee "%"
+
+" set Colorscheme
+colorscheme nord
+
+" clear search results
+nnoremap <esc> :noh<CR>
+
+" lightline
+let g:lightline = {
+    \ 'colorscheme': 'nord',
+    \ }
+
+" Fuzzy finder
+let g:fzf_action = {
+    \ 'ctrl-t': 'tab split',
+    \ 'ctrl-h': 'split',
+    \ 'ctrl-v': 'vsplit' }
+
+" airline
+" let g:airline_powerline_fonts = 1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline_theme = 'base16_nord'
+
+" nerd tree
+let NERDTreeShowHidden=1
+
+" background
+hi Normal guibg=NONE ctermbg=NONE
+
+" tagbar
+" toggle tagbar display
+map <F4> :TagbarToggle<CR>
+" autofocus on tagbar open
+let g:tagbar_autofocus = 1
+
+" nerdtree
+" toggle nerdtree display
+map <F3> :NERDTreeToggle<CR>
+" open nerdtree with the current file selected
+nmap ,t :NERDTreeFind<CR>
+" don;t show these file types
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
+
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+if has('patch8.1.1068')
+  " Use `complete_info` if your (Neo)Vim version supports it.
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying codeAction to the current line.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Add `:Fold` command to fold current buffer.
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" Add `:OR` command for organize imports of the current buffer.
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+
+"-- EXTERNAL CONFIGS --
+source ~/.config/nvim/config/autoclose.vim 

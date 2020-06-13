@@ -70,6 +70,7 @@ export AUR=(
     direnv
     polybar
     spotify
+    spicetify-cli
 
     # watchexec # Executes commands in response to file modifications
     # mailspring

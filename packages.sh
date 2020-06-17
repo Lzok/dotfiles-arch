@@ -53,6 +53,7 @@ export PKG=(
     unzip
     wget
     zsh
+    python
 
     # htop # I'm using ytop-bin from AUR
     # exa

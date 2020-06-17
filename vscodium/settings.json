@@ -1,0 +1,81 @@
+
+
+{
+    "window.zoomLevel": 0,
+    "editor.fontFamily": "Iosevka",
+    "editor.fontSize": 14,
+    "editor.tabSize": 4,
+    "editor.minimap.renderCharacters": false,
+    "editor.formatOnSave": false,
+    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.colorTheme": "Nord",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.settings.editor": "json",
+    "workbench.settings.useSplitJSON": true,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.fontFamily": "Iosevka",
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "workbench.enableExperiments": false,
+    "update.mode": "manual",
+    "extensions.autoUpdate": false,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "debug.node.autoAttach": "on",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.implicitProjectConfig.checkJs": true,
+    "eslint.alwaysShowStatus": true,
+    "prettier.trailingComma": "all",
+    "prettier.singleQuote": true,
+    "javascript.format.enable": false,
+    "emmet.triggerExpansionOnTab": true,
+    "eslint.packageManager": "npm",
+    "files.exclude": {
+        "**/bower_components": true,
+        "**/jspm_packages": true,
+        "**/node_modules": true,
+        "**/.history": true,
+        "**/.git": true,
+        "**/.DS_Store": true
+    },
+    "files.watcherExclude": {
+        "/node_modules/": true
+    },
+    "search.exclude": {
+        "/node_modules": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.stylelint": true
+    },
+    "[javascript]": {
+        "editor.formatOnSave": true
+    },
+    "[typescript]": {
+        "editor.formatOnSave": true
+    },
+    "prettier.disableLanguages": [
+        "js"
+    ],
+    "emmet.includeLanguages": {
+        "html": "html",
+        "javascript": "javascriptreact",
+        "typescriptreact": "javascriptreact"
+    },
+    "emmet.syntaxProfiles": {
+        "javascript": "jsx",
+        "typescriptreact": "jsx"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[elm]": {
+        "editor.formatOnSave": true
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ]
+}
+

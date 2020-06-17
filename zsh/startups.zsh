@@ -18,3 +18,7 @@ source $ZSH/oh-my-zsh.sh
 autoload -U compinit && compinit
 export LANG="en_US.UTF-8"
 export TERM="xterm-256color"
+
+# Node Version Manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

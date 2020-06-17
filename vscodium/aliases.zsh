@@ -1,0 +1,1 @@
+alias c="$HOME/.dotfiles/vscodium/start_codium.sh $1"

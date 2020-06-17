@@ -8,6 +8,16 @@
 echo_info "Installing VS Codium..."
 _install vscodium-bin
 
+# 2020-06-17
+# As of vscode v1.46.0 and higher, the extensions marketplace was moved from Microsoft Marketplace to
+# a community maintained one called openvsx. For some reason, this change breaks the extensions installation
+# via the CLI. Temporarily use this modified product.json file to be able to install the extensions
+# til the new marketplace works ok. You can read more about this here: https://github.com/vscodium/vscodium/issues/418
+# The comment with the answer used is this https://github.com/vscodium/vscodium/issues/418#issuecomment-643664182
+# That modification is the only made in my product.json
+echo_info "Copying product.json..."
+sudo cp $HOME/.dotfiles/vscodium/product.json /usr/share/vscodium-bin/resources/app/product.json
+
 echo_info "Installing VS Codium extensions..."
 vscodium --install-extension coenraads.bracket-pair-colorizer
 vscodium --install-extension ms-azuretools.vscode-docker

@@ -11,3 +11,5 @@ cp $HOME/.zshrc $HOME/.zshrc.bak
 
 ln -sf $HOME/.dotfiles/zsh/themes/lambda-gitster-custom.zsh-theme.symlink $HOME/.oh-my-zsh/custom/themes/lambda-gitster.zsh-theme
 ln -sf $HOME/.dotfiles/zsh/zshrc.symlink $HOME/.zshrc
+
+exec zsh

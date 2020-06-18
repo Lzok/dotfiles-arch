@@ -15,6 +15,8 @@ export PKG=(
     # 3D support for Intel or AMD graphics
     # mesa
 
+    base-devel
+
     # Nvidia driver packages
     # nvidia
     nvidia-utils

@@ -2,9 +2,11 @@
 
 find $HOME/.dotfiles/ -exec chmod +x {} \; # add executable permission to every file in this directory
 
+. prerrequisites.sh
+
 . distro.sh # source the distro specific variables
 . packages.sh # load the packages to install
-. helpers.sh # load helper functions
+# . helpers.sh # load helper functions
 
 echo_info "Updating system"
 _update

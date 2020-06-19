@@ -2,6 +2,7 @@
 
 find $HOME/.dotfiles/ -exec chmod +x {} \; # add executable permission to every file in this directory
 
+# Install the prerrequisites
 . prerrequisites.sh
 
 . distro.sh # source the distro specific variables
@@ -11,8 +12,11 @@ find $HOME/.dotfiles/ -exec chmod +x {} \; # add executable permission to every 
 echo_info "Updating system"
 _update
 
-echo_info "Installing packages..."
-_install "${PKGS[@]}"
+echo_info "Installing packages from the official repositories..."
+_install core
+
+echo_info "Installing packages from AUR repositories..."
+_install aur
 
 echo_info "Running Install files"
 _run_install_files

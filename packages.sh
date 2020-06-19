@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PKG=(
+export PKGS=(
     # CPU Microde files (AMD CPU)
     amd-ucode
 

@@ -18,7 +18,7 @@ _update
 
 # Core packages from official repository
 echo_info "Installing packages with Pacman..."
-sudo pacman -S --needed --noconfirm --removemake --cleanafter amd-ucode \
+sudo pacman -S --needed --noconfirm amd-ucode \
 xorg-server xorg-xinit xorg-xrandr \
 base-devel \
 iproute2 \

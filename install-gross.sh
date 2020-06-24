@@ -18,7 +18,7 @@ _update
 
 # Core packages from official repository
 echo_info "Installing packages with Pacman..."
-sudo pacman -S --needed --no-confirm --removemake --cleanafter amd-ucode \
+sudo pacman -S --needed --noconfirm --removemake --cleanafter amd-ucode \
 xorg-server xorg-xinit xorg-xrandr \
 base-devel \
 iproute2 \
@@ -59,7 +59,7 @@ python
 
 # AUR Packages
 echo_info "Installing AUR packages with Yay..."
-yay -S --needed --no-confirm --removemake --cleanafter nvm \
+yay -S --needed --noconfirm --answerdiff=None --removemake --cleanafter nvm \
 nerd-fonts-iosevka \
 ytop-bin \
 zenith-bin \

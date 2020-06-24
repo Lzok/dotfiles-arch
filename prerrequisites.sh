@@ -27,3 +27,5 @@ cd yay
 
 echo_info "Building yay..."
 makepkg -sir
+
+cd ..

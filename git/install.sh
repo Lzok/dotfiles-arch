@@ -9,6 +9,6 @@ echo_info "Installing Git LFS..."
 _install git
 
 echo_info "Symlink ~/.gitconfig"
-ln -sfT "$HOME/.dotfiles/git/gitconfig" "$HOME/.gitconfig"
+ln -s "$HOME/.dotfiles/git/gitconfig" "$HOME/.gitconfig"
 
 echo_done "Git configuration!"

@@ -43,4 +43,4 @@ vscodium --install-extension ms-python.python
 # vscodium --install-extension vans.haskero
 
 mkdir $HOME/.config/VSCodium
-ln -sf $HOME/.dotfiles/vscodium/settings.json $HOME/.config/VSCodium/User/settings.json
+ln -s $HOME/.dotfiles/vscodium/settings.json $HOME/.config/VSCodium/User/settings.json

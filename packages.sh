@@ -16,6 +16,8 @@ export PKGS=(
     # mesa
 
     base-devel
+    iproute2
+    # net-tools (deprecated in favor of iproute2)
 
     # Nvidia driver packages
     # nvidia

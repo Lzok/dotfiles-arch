@@ -7,7 +7,7 @@
 
 # I use reflector to optimize the mirrors before install the system.
 # https://wiki.archlinux.org/index.php/Reflector
-sudo pacman --noconfirm -S reflector
+sudo pacman --needed --noconfirm -S reflector
 
 # Backup mirrors
 sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak

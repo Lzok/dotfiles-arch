@@ -3,7 +3,7 @@ plugins=(
     zsh-autosuggestions
     git
     tmux
-    z
+    zsh-z
     systemd
     nvm
     common-aliases

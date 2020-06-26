@@ -8,7 +8,8 @@ git clone https://github.com/zsh-users/zsh-completions $HOME/.oh-my-zsh/custom/p
 git clone https://github.com/agkozak/zsh-z $HOME/.oh-my-zsh/custom/plugins/zsh-z
 
 # Make backup
-cp $HOME/.zshrc $HOME/.zshrc.bak
+FILE=$HOME/.zshrc
+[ -f "$FILE" ] && cp "$FILE" $HOME/.zshrc.bak
 
 ln -s $HOME/.dotfiles/zsh/themes/lambda-gitster-custom.zsh-theme.symlink $HOME/.oh-my-zsh/custom/themes/lambda-gitster.zsh-theme
 ln -s $HOME/.dotfiles/zsh/zshrc.symlink $HOME/.zshrc

@@ -73,4 +73,7 @@ spicetify-cli
 echo_info "Running Install files"
 _run_install_files
 
+# Update system
+sudo pacman -Syu
+
 ln -s $HOME/.dotfiles/.xinitrc $HOME/.xinitrc

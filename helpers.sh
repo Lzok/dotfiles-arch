@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# source the distro specific variables
+. distro.sh
+
 blue=$(tput setaf 4)
 green=$(tput setaf 2)
 red=$(tput setaf 1)
@@ -32,13 +36,22 @@ function _install() {
     elif [[ $1 == "aur" ]]; then
       for pkg in "${AUR[@]}"; do
         echo_info "Installing ${pkg} from AUR..."
-        yay -Sy "$pkg" --needed --noconfirm
+        "$PKGMNAUR" "$PKGI" "$pkg" "${PKGOPT[@]}"
         echo_success "Installed ${pkg} from AUR."
       done
     else
       echo_info "Installing package ${1}..."
       sudo "$PKGMN" "$PKGI" "$1"
     fi
+}
+
+function _install_aur() {
+  # Using sudo with yay would be a bad habit. yay calls makepkg behind the scenes
+  # and makepkg should never be run as root.
+  # https://wiki.archlinux.org/index.php/Makepkg#Usage
+  echo_info "Installing ${$1} from AUR..."
+  "$PKGMNAUR" "$PKGI" "$1" "${PKGOPT[@]}"
+  echo_success "Installed ${$1} from AUR."
 }
 
 function _update() {

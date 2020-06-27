@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo_info "Installing VS Codium..."
-_install vscodium-bin
+_install_aur vscodium-bin
 
 # 2020-06-17
 # As of vscode v1.46.0 and higher, the extensions marketplace was moved from Microsoft Marketplace to

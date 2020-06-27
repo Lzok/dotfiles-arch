@@ -1,13 +1,13 @@
 #!/bin/bash
 
 echo_info "Installing Spotify Desktop..."
-_install spotify
+_install_aur spotify
 
 # Before applying Spicetify, you need to gain write permission on Spotify files
 sudo chmod a+wr /opt/spotify
 sudo chmod a+wr /opt/spotify/Apps -R
 
-_install spicetify-cli
+_install_aur spicetify-cli
 
 
 mkdir -p $HOME/.config/spicetify/Themes

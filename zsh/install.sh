@@ -1,6 +1,8 @@
 _install zsh
 git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
-# chsh zsh
+
+# Change shell for my user
+sudo chsh -s "$(command -v zsh)" "${USER}"
 
 git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting

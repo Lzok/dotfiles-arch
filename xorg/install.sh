@@ -4,4 +4,4 @@
 
 echo_info "Linking .xinitrc..."
 
-ln -s $HOME/.dotfiles/xorg/.xinitrc.json $HOME/.xinitrc
+ln -s $HOME/.dotfiles/xorg/.xinitrc $HOME/.xinitrc

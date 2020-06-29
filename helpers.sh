@@ -49,9 +49,9 @@ function _install_aur() {
   # Using sudo with yay would be a bad habit. yay calls makepkg behind the scenes
   # and makepkg should never be run as root.
   # https://wiki.archlinux.org/index.php/Makepkg#Usage
-  echo_info "Installing ${$1} from AUR..."
+  echo_info "Installing $1 from AUR..."
   "$PKGMNAUR" "$PKGI" "$1" "${PKGOPT[@]}"
-  echo_success "Installed ${$1} from AUR."
+  echo_success "Installed $1 from AUR."
 }
 
 function _update() {

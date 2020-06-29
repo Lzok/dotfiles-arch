@@ -19,7 +19,7 @@ _update
 # Core packages from official repository
 echo_info "Installing packages with Pacman..."
 sudo pacman -S --needed --noconfirm amd-ucode \
-xorg-server xorg-xinit xorg-xrandr \
+xorg-server xorg-xinit xorg-xrandr xorg-font-util xorg-mkfontscale \
 base-devel \
 iproute2 \
 nvidia-utils \

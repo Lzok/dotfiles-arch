@@ -11,6 +11,8 @@ export PKGS=(
     xorg-server
     xorg-xinit
     xorg-xrandr
+    xorg-font-util
+    xorg-mkfontscale
 
     # 3D support for Intel or AMD graphics
     # mesa
@@ -34,10 +36,10 @@ export PKGS=(
 
     openssh
     i3-gaps
-    alacritty
+    # alacritty # alacritty/install.sh
     git
-    tmux
-    neovim
+    # tmux # tmux/install.sh
+    # neovim # vim/install.sh
     bat
     jq
     fzf
@@ -49,15 +51,15 @@ export PKGS=(
     flameshot
     neofetch
     pv
-    ranger
+    # ranger # ranger/install.sh
     rofi
     tldr
     tree
     lsd
     unzip
     wget
-    zsh
-    python
+    # zsh # zsh/install.sh
+    # python # python/install.sh
 
     # htop # I'm using ytop-bin from AUR
     # exa
@@ -66,16 +68,16 @@ export PKGS=(
 )
 
 export AUR=(
-    nvm #Node JS Version Manager
+    # nvm #Node JS Version Manager nvm/install.sh
     # nerd-fonts-iosevka # Broken at 2020-06-29
     ytop-bin
     zenith-bin
     compton-tryone-git
-    vscodium-bin
+    # vscodium-bin # vscodium/install.sh
     direnv
-    polybar
-    spotify
-    spicetify-cli
+    # polybar # polybar/install.sh
+    #spotify # spotify/install.sh
+    #spicetify-cli # spotify/install.sh
 
     # watchexec # Executes commands in response to file modifications
     # mailspring

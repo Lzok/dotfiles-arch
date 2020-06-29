@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo_info "Installing Ranger..."
-sudo pacman -S ranger --need --noconfirm
+_install ranger
 
 echo_info "Symlink rc.conf..."
 mkdir -p $HOME/.config/ranger

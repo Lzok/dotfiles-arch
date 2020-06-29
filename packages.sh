@@ -67,7 +67,7 @@ export PKGS=(
 
 export AUR=(
     nvm #Node JS Version Manager
-    nerd-fonts-iosevka
+    # nerd-fonts-iosevka # Broken at 2020-06-29
     ytop-bin
     zenith-bin
     compton-tryone-git

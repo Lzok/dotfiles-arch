@@ -60,7 +60,6 @@ python
 # AUR Packages
 echo_info "Installing AUR packages with Yay..."
 yay -S --needed --noconfirm --answerdiff=None --removemake --cleanafter nvm \
-nerd-fonts-iosevka \
 ytop-bin \
 zenith-bin \
 compton-tryone-git \
